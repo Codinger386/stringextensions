@@ -11,7 +11,7 @@ import Foundation
 extension String {
     
     /// Splits a camel-cased `String` into single words.
-    func camelCaseToWords() -> String {
+    public func camelCaseToWords() -> String {
         return unicodeScalars.reduce("") {
             if CharacterSet.uppercaseLetters.contains($1) && $0 != "" {
                 return ($0 + " " + String($1))
@@ -23,22 +23,22 @@ extension String {
     }
     
     /// Returns a new `String` with the first letter uppercased.
-    func uppercasedFirstLetter() -> String {
+    public func uppercasedFirstLetter() -> String {
       return prefix(1).uppercased() + self.dropFirst()
     }
 
     /// Uppercases the first letter of the `String`.
-    mutating func upercaseFirstLetter() {
+    public mutating func upercaseFirstLetter() {
       self = self.uppercasedFirstLetter()
     }
     
     /// Returns a new `String` with the first letter lowercased.
-    func lowercasedFirstLetter() -> String {
+    public func lowercasedFirstLetter() -> String {
       return prefix(1).lowercased() + self.dropFirst()
     }
 
     /// Lowercases the first letter of the `String`.
-    mutating func lowercaseFirstLetter() {
+    public mutating func lowercaseFirstLetter() {
       self = self.lowercasedFirstLetter()
     }
 }
